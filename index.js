@@ -22,7 +22,7 @@ function createStore (reducer) {
     const dispatch = (action) => {
         state = reducer(state, action)
         listeners.forEach((listener) => listener())
-    }
+      }
 
     return {
         getState,
@@ -34,7 +34,7 @@ function createStore (reducer) {
 
 //App Code
 function todos (state = [], action) {
-    if (action === 'ADD_TODO') {
+    if (action.type === 'ADD_TODO') {
         return state.concat([action.todo])
     }
 
